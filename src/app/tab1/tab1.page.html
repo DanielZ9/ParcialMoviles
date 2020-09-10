@@ -11,62 +11,19 @@
 <br>
 
 <ion-content>
+  <form #formulario="ngForm" (ngSubmit)="tomarData()"> 
     <ion-list>
 
-      <ion-item>
-        <ion-label>1. ¿Tienes malestar o dolor de garganta?</ion-label>
-        <ion-checkbox color="dark"></ion-checkbox>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>2. ¿Tienes sensación de malestar general?</ion-label>
-        <ion-checkbox color="dark"></ion-checkbox>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>3. ¿Tienes sensación de fatiga o cansancio muscular?</ion-label>
-        <ion-checkbox color="dark"></ion-checkbox>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>4. ¿Tienes fiebre? (+38°C)</ion-label>
-        <ion-checkbox color="dark"></ion-checkbox>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>5. ¿Tienes tos seca y persistente?</ion-label>
-        <ion-checkbox color="dark"></ion-checkbox>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>6. ¿Tienes sensación de falta de aire de inicio brusco? <br>
-                   ¿Dificultad para respirar?</ion-label>
-        <ion-checkbox color="dark"></ion-checkbox>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>7. ¿Tienes secreciones o congestión nasales?</ion-label>
-        <ion-checkbox color="dark"></ion-checkbox>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>8. ¿Tienes pérdida del olfato y/o el gusto?</ion-label>
-        <ion-checkbox color="dark"></ion-checkbox>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>9. ¿Vives con alguien sospechoso o confirmado de <br>
-                   tener COVID-19?</ion-label>
-        <ion-checkbox color="dark"></ion-checkbox>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>10. ¿En los últimos 14 días has tenido contacto estrecho <br>
-                  (por más de 15 minutos, a menos de 2 metros y sin usar <br>
-                  Elementos de Protección Personal) con alguien sospechoso <br>
-                  o confirmado de tener COVID-19?</ion-label>
-        <ion-checkbox color="dark"></ion-checkbox>
+      <ion-item *ngFor="let i of data"> 
+        <ion-label>
+          {{ i.name }} <br> {{ i.name2 }}
+        </ion-label>
+        <ion-checkbox [name]="i.name" [(ngModel)]="i.selected" color="dark"></ion-checkbox>
       </ion-item>
 
     </ion-list>
+
+    <ion-button type="submit" [disabled]="formulario.invalid" expand="full">Agregar</ion-button>
+
+  </form>
 </ion-content>
