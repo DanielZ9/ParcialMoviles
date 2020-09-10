@@ -1,17 +1,27 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Consultar Formularios
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ul>
+  <li *ngFor="let agenda of data; index as i;">
+    <label>Formulario</label>
+    <br>
+      <ul>
+        <li>{{ agenda.pregunta}}:  {{ agenda.selected}}</li>
+        <li>{{ agenda.pregunta}}:  {{ agenda.selected}}</li>
+        <li>{{ agenda.pregunta}}:  {{ agenda.selected}}</li>
+        <li>{{ agenda.pregunta}}:  {{ agenda.selected}}</li>
+        <li>{{ agenda.pregunta}}:  {{ agenda.selected}}</li>
+        <li>{{ agenda.pregunta}}:  {{ agenda.selected}}</li>
+        <li>{{ agenda.pregunta}}:  {{ agenda.selected}}</li>
+        <li>{{ agenda.pregunta}}:  {{ agenda.selected}}</li>
+        <li>{{ agenda.pregunta}}:  {{ agenda.selected}}</li>
+        <li>{{ agenda.pregunta}}:  {{ agenda.selected}}</li>
+      </ul>
+  </li>
+</ul>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
-</ion-content>

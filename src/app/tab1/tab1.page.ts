@@ -8,10 +8,10 @@ import { from } from 'rxjs';
 })
 export class Tab1Page implements OnInit{
 
-  informacion = JSON.parse(window.localStorage['data'] || '[]');
-  
+  public informacion = JSON.parse(window.localStorage['encuesta'] || '[]');
+  //public informacion = [];
 
-  data = [
+  public data = [
 
     {
       pregunta: '¿Tienes malestar o dolor de garganta?',
@@ -53,7 +53,8 @@ export class Tab1Page implements OnInit{
       pregunta: '¿En los últimos 14 días tuvo contacto con alguien',
       pregunta2: 'sospechoso o confirmado de tener COVID-19?',
       selected: false
-    }
+    },
+
   ];
 
   constructor() {}
@@ -63,9 +64,14 @@ export class Tab1Page implements OnInit{
   }
 
   guardarData(){
-    //this.informacion.push(this.data);
+
+    console.log('array data')
+    console.log(this.data); 
+
+    this.informacion.push(this.data);
+    window.localStorage['encuesta'] = JSON.stringify(this.informacion); 
+    console.log('informacion'); 
     console.log(this.informacion); 
-    //window.localStorage['data'] = JSON.stringify(this.informacion); 
   }
 
    sacarData(){
