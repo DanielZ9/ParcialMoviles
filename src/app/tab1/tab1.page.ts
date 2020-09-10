@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-tab1',
@@ -7,46 +8,50 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Tab1Page implements OnInit{
 
+  informacion = JSON.parse(window.localStorage['data'] || '[]');
+  
+
   data = [
+
     {
-      name: '¿Tienes malestar o dolor de garganta?',
+      pregunta: '¿Tienes malestar o dolor de garganta?',
       selected: false
     },
     {
-      name: '¿Tienes sensación de malestar general?',
+      pregunta: '¿Tienes sensación de malestar general?',
       selected: false
     },
     {
-      name: '¿Tienes sensación de fatiga o cansancio muscular?',
+      pregunta: '¿Tienes sensación de fatiga o cansancio muscular?',
       selected: false
     },
     {
-      name: '¿Tienes fiebre? (+38°C)',
+      pregunta: '¿Tienes fiebre? (+38°C)',
       selected: false
     },
     {
-      name: '¿Tienes tos seca y persistente?',
+      pregunta: '¿Tienes tos seca y persistente?',
       selected: false
     },
     {
-      name: '¿Dificultad para respirar?',
+      pregunta: '¿Dificultad para respirar?',
       selected: false
     },
     {
-      name: '¿Tienes secreciones o congestión nasales?',
+      pregunta: '¿Tienes secreciones o congestión nasales?',
       selected: false
     },
     {
-      name: '¿Tienes pérdida del olfato y/o el gusto?',
+      pregunta: '¿Tienes pérdida del olfato y/o el gusto?',
       selected: false
     },
     {
-      name: '¿Vives con alguien sospechoso o confirmado de tener COVID-19?',
+      pregunta: '¿Vives con alguien sospechoso o confirmado de tener COVID-19?',
       selected: false
     },
     {
-      name: '¿En los últimos 14 días tuvo contacto con alguien',
-      name2: 'sospechoso o confirmado de tener COVID-19?',
+      pregunta: '¿En los últimos 14 días tuvo contacto con alguien',
+      pregunta2: 'sospechoso o confirmado de tener COVID-19?',
       selected: false
     }
   ];
@@ -57,8 +62,14 @@ export class Tab1Page implements OnInit{
     
   }
 
-  tomarData(){
-    console.log(this.data); 
+  guardarData(){
+    //this.informacion.push(this.data);
+    console.log(this.informacion); 
+    //window.localStorage['data'] = JSON.stringify(this.informacion); 
   }
+
+   sacarData(){
+
+   }
 
 }
