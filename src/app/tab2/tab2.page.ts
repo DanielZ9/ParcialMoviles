@@ -8,12 +8,12 @@ import { Tab1Page } from '../tab1/tab1.page';
 })
 export class Tab2Page implements OnInit{
 
-  public data = JSON.parse(window.localStorage['data'] || '[]');
+  public datos = JSON.parse(window.localStorage['encuestas'] || '[]');
 
   constructor() {}
 
-  ngOnInit(): void {
-    
+  ngOnInit(){
+    console.log(this.datos);
   }
 
 }

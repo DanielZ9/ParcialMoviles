@@ -69,8 +69,8 @@ export class Tab1Page implements OnInit{
     console.log(this.data); 
 
     this.informacion.push(this.data);
-    window.localStorage['encuesta'] = JSON.stringify(this.informacion); 
-    console.log('informacion'); 
+    window.localStorage['encuestas'] = JSON.stringify(this.informacion); 
+    //console.log('informacion'); 
     console.log(this.informacion); 
   }
 

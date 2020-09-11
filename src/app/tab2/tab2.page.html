@@ -6,22 +6,31 @@
   </ion-toolbar>
 </ion-header>
 
-<ul>
-  <li *ngFor="let agenda of data; index as i;">
-    <label>Formulario</label>
-    <br>
+<ion-button (click)="ngOnInit()" type="submit" expand="full">ver</ion-button>
+
+<!--<ul>
+  <li *ngFor="let i of datos">
       <ul>
-        <li>{{ agenda.pregunta}}:  {{ agenda.selected}}</li>
-        <li>{{ agenda.pregunta}}:  {{ agenda.selected}}</li>
-        <li>{{ agenda.pregunta}}:  {{ agenda.selected}}</li>
-        <li>{{ agenda.pregunta}}:  {{ agenda.selected}}</li>
-        <li>{{ agenda.pregunta}}:  {{ agenda.selected}}</li>
-        <li>{{ agenda.pregunta}}:  {{ agenda.selected}}</li>
-        <li>{{ agenda.pregunta}}:  {{ agenda.selected}}</li>
-        <li>{{ agenda.pregunta}}:  {{ agenda.selected}}</li>
-        <li>{{ agenda.pregunta}}:  {{ agenda.selected}}</li>
-        <li>{{ agenda.pregunta}}:  {{ agenda.selected}}</li>
+        <li>{{ i.pregunta }}:  {{ i.selected }}</li>
       </ul>
   </li>
-</ul>
+</ul>-->
 
+<ion-content>
+  <form #formulario="ngForm">
+
+    <ion-list *ngFor="let i of datos">
+    <br>
+    <ion-label>Formulario</ion-label>
+    <br>
+      <ion-item *ngFor="let j of i"> 
+        <ion-label>
+          {{ j.pregunta }} <br> {{ j.pregunta2 }}
+        </ion-label>
+        <ion-checkbox disable="true" [name]="j.pregunta" checked="{{j.selected}}" color="dark"></ion-checkbox>
+      </ion-item>
+
+    </ion-list>
+
+  </form>
+</ion-content>
