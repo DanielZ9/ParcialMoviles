@@ -8,7 +8,7 @@ import { from } from 'rxjs';
 })
 export class Tab1Page implements OnInit{
 
-  public informacion = JSON.parse(window.localStorage['encuesta'] || '[]');
+  public informacion = JSON.parse(window.localStorage['info'] || '[]');
   //public informacion = [];
 
   public data = [
@@ -69,7 +69,7 @@ export class Tab1Page implements OnInit{
     console.log(this.data); 
 
     this.informacion.push(this.data);
-    window.localStorage['encuestas'] = JSON.stringify(this.informacion); 
+    window.localStorage['info'] = JSON.stringify(this.informacion); 
     //console.log('informacion'); 
     console.log(this.informacion); 
   }
